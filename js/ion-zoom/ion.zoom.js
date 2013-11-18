@@ -64,7 +64,8 @@
                 baseSize = {},
                 currentNum = 0,
                 link,
-                newLink;
+                newLink,
+                altText = "";
 
             var $current,
                 $newCurrent,
@@ -198,8 +199,15 @@
             };
 
             var loadImage = function(){
-                $container.append('<img src="' + link + '" />');
-                $image = $container.children("img");
+				if($current.children("img").attr("alt") == undefined) {
+					text = "";
+					$container.append('<img src="' + link + '" />');
+				}
+				else {
+					text = $current.children("img").attr("alt");
+					$container.append('<img src="' + link + '" alt="' + text + '"/><div class="ion-zoom-text"><div>' + text + '</div></div>');
+				}
+				$image = $container.children("img");
 
                 $image.on("load", function(){
                     currentSize.w = $image.width();
@@ -321,6 +329,7 @@
                 $container.children("img").remove();
                 isOpen = false;
                 anyOpen = false;
+                text = "";
             };
 
             var closeOther = function($toOpen){
