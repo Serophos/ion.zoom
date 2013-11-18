@@ -45,7 +45,8 @@
 
 .ion-zoom-close,
 .ion-zoom-prev,
-.ion-zoom-next {
+.ion-zoom-next,
+.ion-zoom-text{
     position: absolute;
     background: rgba(0,0,0,0.7);
     _background: #000;
@@ -63,6 +64,16 @@
     transition-timing-function: cubic-bezier(0.420, 0.000, 0.580, 1.000); /* ease-in-out */
 }
 
+    .ion-zoom-text {
+        top: 0; left: 0;
+		padding: 0 15px;
+        height: 30px;
+        border-radius: 0 0 5px 0;
+        z-index: 2;
+        font: 12px/30px Arial, Helvetica, sans-serif;
+        color: #fff; text-shadow: none;
+        text-align: center;
+    }
     .ion-zoom-close {
         top: -30px; right: -30px;
         width: 30px; height: 30px;
