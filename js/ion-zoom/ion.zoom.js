@@ -199,15 +199,15 @@
             };
 
             var loadImage = function(){
-				if($current.children("img").attr("alt") == undefined) {
-					text = "";
-					$container.append('<img src="' + link + '" />');
-				}
-				else {
-					text = $current.children("img").attr("alt");
-					$container.append('<img src="' + link + '" alt="' + text + '"/><div class="ion-zoom-text"><div>' + text + '</div></div>');
-				}
-				$image = $container.children("img");
+		if($current.children("img").attr("alt") == undefined) {
+			altText = "";
+			$container.append('<img src="' + link + '" />');
+		}
+		else {
+			altText = $current.children("img").attr("alt");
+			$container.append('<img src="' + link + '" alt="' + altText + '"/><div class="ion-zoom-text"><div>' + altText + '</div></div>');
+		}
+		$image = $container.children("img");
 
                 $image.on("load", function(){
                     currentSize.w = $image.width();
@@ -329,7 +329,7 @@
                 $container.children("img").remove();
                 isOpen = false;
                 anyOpen = false;
-                text = "";
+                altText = "";
             };
 
             var closeOther = function($toOpen){
